@@ -238,6 +238,9 @@
         .quote {
             transition: opacity 0.5s ease-in-out;
         }
+        audio{
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -278,14 +281,21 @@
     <div id="heart-container"></div>
 
     <footer class="footer">
-        <audio autoplay loop>
-            <source src="WhatsApp Audio 2025-02-09 at 22.45.29_bc3febb2.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
+        <audio id="audio" autoplay loop>
+			<source src="WhatsApp Audio 2025-02-09 at 22.45.29_bc3febb2.mp3" type="audio/mp3">
+			Your browser does not support the audio element.
+		</audio>
         <p id="quote" class="quote"></p>
     </footer>
 
     <script>
+         window.onload = function() {
+            // Set a timeout to delay the audio playback by 2 seconds
+            setTimeout(function() {
+                var audio = document.getElementById('audio');
+                audio.play();
+            }, 2000); // 2000 milliseconds = 2 seconds
+        };
         // Initial notes data
         const initialNotes = [
     {
