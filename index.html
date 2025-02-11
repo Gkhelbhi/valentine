@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -106,8 +107,15 @@
         }
 
         @keyframes beat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
         }
 
         .modal {
@@ -215,6 +223,7 @@
                 transform: translateY(-10vh) scale(0.8);
                 opacity: 1;
             }
+
             100% {
                 transform: translateY(100vh) scale(1);
                 opacity: 0;
@@ -238,24 +247,26 @@
         .quote {
             transition: opacity 0.5s ease-in-out;
         }
-        audio{
+
+        audio {
             display: none;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header class="header">
             <h1 class="title">Wall of Love 💕</h1>
         </header>
-        
+
         <div class="notes-container" id="notesContainer"></div>
 
         <img src="hi.png" alt="Add" class="add-button" onclick="showModal()">
 
         <div class="modal" id="addNoteModal">
             <div class="modal-content">
-                <h2 class="modal-title">Add Your Love Note</h2>
+                <h2 class="modal-title">Give Your Love a Sweet Compliment</h2>
                 <form id="noteForm" onsubmit="handleSubmit(event)">
                     <div class="form-group">
                         <label class="form-label">Your Name</label>
@@ -281,59 +292,55 @@
     <div id="heart-container"></div>
 
     <footer class="footer">
-        <audio id="audio" autoplay loop>
-			<source src="WhatsApp Audio 2025-02-09 at 22.45.29_bc3febb2.mp3" type="audio/mp3">
-			Your browser does not support the audio element.
-		</audio>
         <p id="quote" class="quote"></p>
     </footer>
 
     <script>
-         window.onload = function() {
+        window.onload = function () {
             // Set a timeout to delay the audio playback by 2 seconds
-            setTimeout(function() {
+            setTimeout(function () {
                 var audio = document.getElementById('audio');
                 audio.play();
             }, 2000); // 2000 milliseconds = 2 seconds
         };
         // Initial notes data
         const initialNotes = [
-    {
-        fromName: "Anand",
-        toName: "SomeOne",
-        message: "Every day with you is Valentine's Day ❤️",
-        color: "#FFB6C1",
-        rotation: -2.5
-    },
-    {
-        fromName: "Peri-Peri",
-        toName: "Prerna",
-        message: "My heart skips a beat every time I see you, just like it's the first time.",
-        color: "#FFC0CB",
-        rotation: 3.2
-    },
-    {
-        fromName: "Chota don",
-        toName: "Vise-press",
-        message: "You make my heart skip a beat 💕",
-        color: "#FFE4E1",
-        rotation: 1.8
-    },
-    {
-        fromName: "Rushi",
-        toName: "Siddhi",
-        message: "Every time I see you, it's like the first moment our eyes met. My heart skips a beat, and for a fleeting second, I forget everything, caught in the magic of you.",
-        color: "#FFB6C1",
-        rotation: 2.8
-    },
-    {
-        fromName: "Vedas",
-        toName: "Bhakti",
-        message: "I think my heart's got a secret crush on you... it skips a beat every time we cross paths, like it's trying to say 'hello' all over again!",
-        color: "#FFE4E1",
-        rotation: 1.7
-    }
-];
+            {
+                fromName: "Anand",
+                toName: "SomeOne",
+                message: "Every day with you is Valentine's Day ❤️",
+                color: "#FFB6C1",
+                rotation: -2.5
+            },
+            {
+                fromName: "Peri-Peri",
+                toName: "Prerna",
+                message: "My heart skips a beat every time I see you, just like it's the first time.",
+                color: "#FFC0CB",
+                rotation: 3.2
+            },
+            {
+                fromName: "Chota don",
+                toName: "Vise-press",
+                message: "You make my heart skip a beat 💕",
+                color: "#FFE4E1",
+                rotation: 1.8
+            },
+            {
+                fromName: "Rushi",
+                toName: "Siddhi",
+                message: "Every time I see you, it's like the first moment our eyes met. My heart skips a beat, and for a fleeting second, I forget everything, caught in the magic of you.",
+                color: "#FFB6C1",
+                rotation: 2.8
+            },
+            {
+                fromName: "Vedas",
+                toName: "Bhakti",
+                message: "I think my heart's got a secret crush on you... it skips a beat every time we cross paths, like it's trying to say 'hello' all over again!",
+                color: "#FFE4E1",
+                rotation: 1.7
+            }
+        ];
 
 
         // Utility functions
@@ -399,7 +406,7 @@
         // Form handling
         function handleSubmit(event) {
             event.preventDefault();
-            
+
             const message = document.getElementById('message').value;
             const wordCount = message.trim().split(/\s+/).length;
 
@@ -479,7 +486,8 @@
             setInterval(showNextQuote, 5000);
         };
     </script>
- 
+
 
 </body>
+
 </html>
